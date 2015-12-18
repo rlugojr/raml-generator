@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "escape-html": "github:typings/typed-escape-html#a26f373299e291e8a85c81ffcccb8e5a216f7bf9",
+    "indent-string": "github:typings/typed-indent-string#9d6fef8eeccf2b9d9690b29b9730635ccef1b43c",
+    "methods": "github:typings/typed-methods#b902fa13683e95d54b2bb69188f68ea3525ec430",
+    "mkdirp": "github:typings/typed-mkdirp#c22e0a7cf2597d5fc9122ca70af19b6638886fc0",
+    "native-or-bluebird": "github:typings/typed-native-or-bluebird#2f6bf64abda66d137016576086e9e1c0dac45469",
+    "object.pick": "github:typings/typed-object.pick#c588655f1889da2140b89ee4d42be3665ff3e164",
+    "parse-json": "github:typings/typed-parse-json#74152f9c8b831227fc4eb3533fcd01b8906e2694",
+    "raml-1-parser": "file:custom_typings/raml-1-parser.d.ts",
+    "thenify": "github:typings/typed-thenify#a48708b3e5bcd6783a9e0c52e6f3a122f8ad6bd9",
+    "xtend": "github:typings/typed-xtend#63cccadf3295b3c15561ee45617ac006edcca9e0",
+    "yargs": "github:typings/typed-yargs#0ceaff08a778b580fd4772b04bfb59fbf836dd8e"
+  },
+  "ambientDependencies": {
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#5cb07b53719466b27cb32f3eb2c7c3e22575ecda"
+  },
+  "devDependencies": {
+    "blue-tape": "github:typings/typed-blue-tape#a4e41a85d6f760e7c60088127968eae7d3a556fa"
+  }
+}

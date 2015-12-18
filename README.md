@@ -5,7 +5,7 @@
 [![Build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 
-Generate files from a RAML document and Handlebars templates.
+Generate files from a RAML document and templates.
 
 ## Installation
 
@@ -15,7 +15,9 @@ npm install raml-generator --save
 
 ## Usage
 
-The module accepts a map of Handlebars templates, partials and helpers, and exports a function that can be used to generate files from a RAML object and user data. For an example module, take a look at the [raml-javascript-generator](https://github.com/mulesoft-labs/raml-javascript-generator).
+The module accepts a map of functions (usually compiled templates, such as Handlebars) and helper functions, and returns a function that will generate files given an instance of the RAML 1 parser API.
+
+For an example module, take a look at the [raml-javascript-generator](https://github.com/mulesoft-labs/raml-javascript-generator).
 
 ### JavaScript Usage
 
@@ -23,27 +25,18 @@ Create the generator function from an object specification. The returned object 
 
 ```js
 var fs = require('fs')
+var Handlebars = require('handlebars')
 var generator = require('raml-generator')
 
 module.exports = generator({
   templates: {
-    'index.js': fs.readFileSync(__dirname + '/templates/index.js.hbs', 'utf8')
+    'index.js': Handlebars.compile(fs.readFileSync(__dirname + '/templates/index.js.hbs', 'utf8'))
   },
   helpers: {
     stringify: require('javascript-stringify')
   }
 }) //=> [Function]
 ```
-
-### Handlebars
-
-Inside the Handlebars templates, the [RAML interface](https://github.com/mulesoft-labs/js-raml-object-interface) is exposed as Handlebars data.
-
-```hbs
-var baseUri = {{stringify baseUri}}
-```
-
-The user data is automatically provided as the Handlebars compile context.
 
 ### Bin Script
 
